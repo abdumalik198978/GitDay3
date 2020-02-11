@@ -28,8 +28,8 @@ public class Login_test {
 driver.get("http://secure.smartbearsoftware.com/samples/TestComplete12/WebOrders/Login.aspx");
 driver.findElement(By.id("ctl00_MainContent_username")).sendKeys("Tester");
 driver.findElement(By.id("ctl00_MainContent_password")).sendKeys("test"+ Keys.ENTER);
-
-        Assert.assertEquals(driver.getTitle(),"Web Orders");
+String title = driver.getTitle():
+        Assert.assertEquals(title,"Web Orders");
     }
     @AfterMethod
     public void cleanup(){
@@ -41,5 +41,6 @@ driver.close();
         driver.findElement(By.id("ctl00_MainContent_username")).sendKeys("Tester");
         driver.findElement(By.id("ctl00_MainContent_password")).sendKeys("test"+ Keys.ENTER);
         driver.findElement(By.id("ctl00_logout")).click();
+        String title = driver.getTitle():
     }
 }
