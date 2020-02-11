@@ -31,6 +31,15 @@ driver.findElement(By.id("ctl00_MainContent_password")).sendKeys("test"+ Keys.EN
 String title = driver.getTitle();
         Assert.assertEquals(title,"Web Orders");
     }
+
+    @Test
+    public void negativeloginTest(){
+        driver.get("http://secure.smartbearsoftware.com/samples/TestComplete12/WebOrders/Login.aspx");
+        driver.findElement(By.id("ctl00_MainContent_username")).sendKeys("Testera");
+        driver.findElement(By.id("ctl00_MainContent_password")).sendKeys("testa"+ Keys.ENTER);
+
+        Assert.assertEquals(driver.getTitle(),"Web Orders");
+    }
     @AfterMethod
     public void cleanup(){
 driver.close();
